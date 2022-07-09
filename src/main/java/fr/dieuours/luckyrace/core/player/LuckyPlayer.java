@@ -1,8 +1,10 @@
 package fr.dieuours.luckyrace.core.player;
 
+import fr.dieuours.luckyrace.utils.ClassSerializer;
+
 import java.util.UUID;
 
-public class LuckyPlayer {
+public class LuckyPlayer extends ClassSerializer {
 
     private final UUID uuid;
     private int totalDeaths, totalWins;
@@ -39,5 +41,10 @@ public class LuckyPlayer {
 
     public void setTotalWins(int totalWins) {
         this.totalWins = totalWins;
+    }
+
+    @Override
+    public String toString() {
+        return getGson().toJson(this);
     }
 }

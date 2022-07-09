@@ -16,7 +16,7 @@ public class LuckyGame extends LuckyNewGame {
      * @see FinalLine
      * @see LuckyNewGame
      */
-    public LuckyGame(Location waitingLobby, FinalLine finalLine, LuckyNewGame luckyNewGame) {
+    public LuckyGame(Location waitingLobby, LuckyNewGame luckyNewGame, FinalLine finalLine) {
         super(luckyNewGame.getUuid(), luckyNewGame.getMaxPlayers(), luckyNewGame.getMinPlayers(),
                 luckyNewGame.getPlayersSpawn(), luckyNewGame.getLuckyChests(), luckyNewGame.getLuckyPlayerInGames());
         this.waitingLobby = waitingLobby;
