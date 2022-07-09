@@ -5,7 +5,6 @@ import org.bukkit.Location;
 
 public class LuckyGame extends LuckyNewGame {
 
-
     private Location waitingLobby;
     private FinalLine finalLine;
 
