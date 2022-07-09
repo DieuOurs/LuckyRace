@@ -3,6 +3,8 @@ package fr.dieuours.luckyrace.utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.lang.reflect.Type;
+
 public class ClassSerializer {
 
     private static final Gson gson;
@@ -16,14 +18,22 @@ public class ClassSerializer {
     }
 
     /**
+     * @return gson
+     * @see Gson
+     */
+    public static Gson getGson() {
+        return gson;
+    }
+
+    /**
      * @param c
      * @param json
      * @return gson.fromJson(String, Class < ? extends ClassSerializer >);
      * @see ClassSerializer
      * @see Class
      */
-    public static Object deserialize(Class<? extends ClassSerializer> c, String json) {
-        return gson.fromJson(json, c);
+    public static <T> T deserialize(Class<? extends ClassSerializer> c, String json) {
+        return gson.fromJson(json, (Type) c);
     }
 
     /**

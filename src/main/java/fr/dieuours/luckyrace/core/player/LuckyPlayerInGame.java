@@ -2,6 +2,9 @@ package fr.dieuours.luckyrace.core.player;
 
 import java.util.UUID;
 
+/**
+ * @see fr.dieuours.luckyrace.core.player.LuckyPlayer
+ */
 public class LuckyPlayerInGame extends LuckyPlayer {
 
     private final UUID gameUUID;
