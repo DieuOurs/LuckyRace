@@ -5,6 +5,9 @@ import com.google.gson.GsonBuilder;
 
 import java.lang.reflect.Type;
 
+/**
+ * @since T0.0.1
+ */
 public class ClassSerializer {
 
     private static final Gson gson;
