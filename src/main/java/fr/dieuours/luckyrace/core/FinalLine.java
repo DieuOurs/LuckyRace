@@ -1,5 +1,7 @@
 package fr.dieuours.luckyrace.core;
 
+import fr.dieuours.luckyrace.LuckyRace;
+import fr.dieuours.luckyrace.core.exceptions.GameNotFoundException;
 import fr.dieuours.luckyrace.core.exceptions.WorldException;
 import org.bukkit.Location;
 
@@ -9,6 +11,7 @@ import java.util.UUID;
 
 public class FinalLine {
 
+    private final static LuckyRace pl = LuckyRace.getInstance();
     private final UUID gameUUID;
     private final Location pos1, pos2;
     private final List<Location> line;
@@ -20,7 +23,10 @@ public class FinalLine {
      * @param pos2     Location
      * @throws WorldException Exception
      */
-    public FinalLine(UUID gameUUID, Location pos1, Location pos2) throws WorldException {
+    public FinalLine(UUID gameUUID, Location pos1, Location pos2) throws WorldException, GameNotFoundException {
+        if(pl.getLuckyGames().stream().noneMatch(x->x.getUuid().equals(gameUUID))){
+            throw new GameNotFoundException();
+        }
         this.gameUUID = gameUUID;
         if (!pos1.getWorld().equals(pos2.getWorld())) {
             throw new WorldException();

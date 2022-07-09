@@ -1,6 +1,14 @@
 package fr.dieuours.luckyrace;
 
+import fr.dieuours.luckyrace.core.FinalLine;
+import fr.dieuours.luckyrace.core.LuckyChest;
+import fr.dieuours.luckyrace.core.game.LuckyGame;
+import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * @see JavaPlugin
@@ -8,6 +16,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class LuckyRace extends JavaPlugin {
 
     private static LuckyRace instance;
+    private List<LuckyGame> luckyGames;
 
     public static LuckyRace getInstance() {
         return instance;
@@ -42,5 +51,10 @@ public class LuckyRace extends JavaPlugin {
     public void onEnable() {
         super.onEnable();
         instance = this;
+        this.luckyGames = new ArrayList<>();
+    }
+
+    public List<LuckyGame> getLuckyGames() {
+        return this.luckyGames;
     }
 }
