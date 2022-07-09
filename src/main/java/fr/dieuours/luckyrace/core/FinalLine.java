@@ -24,7 +24,7 @@ public class FinalLine {
      * @throws WorldException Exception
      */
     public FinalLine(UUID gameUUID, Location pos1, Location pos2) throws WorldException, GameNotFoundException {
-        if(pl.getLuckyGames().stream().noneMatch(x->x.getUuid().equals(gameUUID))){
+        if (pl.getLuckyGames().stream().noneMatch(x -> x.getUuid().equals(gameUUID))) {
             throw new GameNotFoundException();
         }
         this.gameUUID = gameUUID;

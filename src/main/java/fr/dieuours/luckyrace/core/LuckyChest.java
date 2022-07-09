@@ -20,7 +20,7 @@ public class LuckyChest {
      * @param chance   Chance is enum of this class
      */
     public LuckyChest(UUID gameUUID, UUID uuid, Location location, Chance chance) throws GameNotFoundException {
-        if(pl.getLuckyGames().stream().noneMatch(x->x.getUuid().equals(gameUUID))){
+        if (pl.getLuckyGames().stream().noneMatch(x -> x.getUuid().equals(gameUUID))) {
             throw new GameNotFoundException();
         }
         this.gameUUID = gameUUID;

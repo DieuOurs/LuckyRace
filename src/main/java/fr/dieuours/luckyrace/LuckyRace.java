@@ -1,14 +1,10 @@
 package fr.dieuours.luckyrace;
 
-import fr.dieuours.luckyrace.core.FinalLine;
-import fr.dieuours.luckyrace.core.LuckyChest;
 import fr.dieuours.luckyrace.core.game.LuckyGame;
-import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @see JavaPlugin

@@ -20,7 +20,7 @@ public class LuckyPlayerInGame extends LuckyPlayer {
      */
     public LuckyPlayerInGame(UUID uuid, int totalDeaths, int totalWins, UUID gameUUID, int totalDeathInGame) throws GameNotFoundException {
         super(uuid, totalDeaths, totalWins);
-        if(pl.getLuckyGames().stream().noneMatch(x->x.getUuid().equals(gameUUID))){
+        if (pl.getLuckyGames().stream().noneMatch(x -> x.getUuid().equals(gameUUID))) {
             throw new GameNotFoundException();
         }
         this.gameUUID = gameUUID;
