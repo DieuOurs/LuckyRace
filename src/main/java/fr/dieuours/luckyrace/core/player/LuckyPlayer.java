@@ -40,4 +40,8 @@ public class LuckyPlayer {
     public void setTotalWins(int totalWins) {
         this.totalWins = totalWins;
     }
+
+    public boolean isInGame() {
+        return ((LuckyPlayerInGame) this).getGameUUID() != null;
+    }
 }

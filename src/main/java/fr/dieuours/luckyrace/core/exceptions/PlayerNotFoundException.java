@@ -1,6 +1,6 @@
 package fr.dieuours.luckyrace.core.exceptions;
 
-public class PlayerNotFoundException extends Exception{
+public class PlayerNotFoundException extends Exception {
 
     /**
      * Default constructor
