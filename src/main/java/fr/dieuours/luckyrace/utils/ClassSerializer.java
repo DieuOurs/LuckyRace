@@ -16,7 +16,7 @@ public class ClassSerializer {
     }
 
     /**
-     * @param c Class<? extends ClassSerializer> c
+     * @param c    Class<? extends ClassSerializer> c
      * @param json String
      * @return gson.fromJson(String, Class < ? extends ClassSerializer >);
      * @see ClassSerializer
