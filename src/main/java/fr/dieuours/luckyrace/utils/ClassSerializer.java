@@ -16,11 +16,10 @@ public class ClassSerializer {
     }
 
     /**
-     * @param c
-     * @param json
+     * @param c Class<? extends ClassSerializer> c
+     * @param json String
      * @return gson.fromJson(String, Class < ? extends ClassSerializer >);
      * @see ClassSerializer
-     * @see Class
      */
     public static Object deserialize(Class<? extends ClassSerializer> c, String json) {
         return gson.fromJson(json, c);
