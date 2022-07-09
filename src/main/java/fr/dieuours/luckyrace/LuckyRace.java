@@ -2,6 +2,9 @@ package fr.dieuours.luckyrace;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * @see JavaPlugin
+ */
 public class LuckyRace extends JavaPlugin {
 
     private static LuckyRace instance;
