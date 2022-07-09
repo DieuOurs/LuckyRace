@@ -25,6 +25,10 @@ public class ClassSerializer {
         return gson.fromJson(json, c);
     }
 
+    public static Gson getGson() {
+        return gson;
+    }
+
     /**
      * @return this.gson.toJson(this);
      */

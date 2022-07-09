@@ -5,6 +5,9 @@ import fr.dieuours.luckyrace.core.exceptions.GameNotFoundException;
 
 import java.util.UUID;
 
+/**
+ * @see fr.dieuours.luckyrace.core.player.LuckyPlayer
+ */
 public class LuckyPlayerInGame extends LuckyPlayer {
 
     private final static LuckyRace pl = LuckyRace.getInstance();

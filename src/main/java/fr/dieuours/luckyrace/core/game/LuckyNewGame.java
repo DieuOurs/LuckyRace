@@ -2,13 +2,14 @@ package fr.dieuours.luckyrace.core.game;
 
 import fr.dieuours.luckyrace.core.LuckyChest;
 import fr.dieuours.luckyrace.core.player.LuckyPlayerInGame;
+import fr.dieuours.luckyrace.utils.ClassSerializer;
 import org.bukkit.Location;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class LuckyNewGame {
+public class LuckyNewGame extends ClassSerializer {
 
     private final UUID uuid;
     private int maxPlayers, minPlayers;
@@ -87,5 +88,14 @@ public class LuckyNewGame {
 
     public void setLuckyPlayerInGames(List<LuckyPlayerInGame> luckyPlayerInGames) {
         this.luckyPlayerInGames = luckyPlayerInGames;
+    }
+
+    /**
+     * @return getGson().toJson(this);
+     * @see ClassSerializer
+     */
+    @Override
+    public String toString() {
+        return getGson().toJson(this);
     }
 }
