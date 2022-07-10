@@ -52,10 +52,19 @@ public class LuckyGame extends LuckyNewGame {
         this.status = status;
     }
 
+    public void sendMessageToEveryPlayerInGame(String message) {
+        this.getLuckyPlayerInGames().forEach(x -> Bukkit.getPlayer(x.getUuid()).sendMessage(message));
+    }
+
+    public Location getLobbyWhenGameEnd() {
+        return lobbyWhenGameEnd;
+    }
+
     public enum Status {
         WAITING,
         LOBBY,
         IN_GAME,
+        END
         /*RESET,
         ERROR,*/
     }
