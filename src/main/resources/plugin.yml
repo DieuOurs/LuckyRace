@@ -2,3 +2,9 @@ name: LuckyRace
 author: DieuOurs
 version: 0.0.1
 main: fr.dieuours.luckyrace
+commands:
+  luckyrace:
+    description: LuckyRace default command
+    permission: luckyrace.default
+    permission-message: Not permission to use this command...
+    usage: /luckyrace

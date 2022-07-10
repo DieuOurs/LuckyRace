@@ -1,5 +1,6 @@
 package fr.dieuours.luckyrace;
 
+import fr.dieuours.luckyrace.core.commands.LuckyRaceCommands;
 import fr.dieuours.luckyrace.core.game.LuckyGame;
 import fr.dieuours.luckyrace.core.player.LuckyPlayer;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -51,6 +52,8 @@ public class LuckyRace extends JavaPlugin {
         instance = this;
         this.luckyGames = new ArrayList<>();
         this.luckyPlayers = new ArrayList<>();
+
+        getCommand("luckyrace").setExecutor(new LuckyRaceCommands());
     }
 
     public List<LuckyGame> getLuckyGames() {
