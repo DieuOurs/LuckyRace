@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * @since T0.0.3
- */
 public class LuckyNewGame extends ClassSerializer {
 
     private final UUID uuid;
