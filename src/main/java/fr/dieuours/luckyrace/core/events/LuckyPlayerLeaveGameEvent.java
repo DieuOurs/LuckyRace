@@ -11,6 +11,7 @@ public class LuckyPlayerLeaveGameEvent extends Event {
 
     private static final LuckyRace pl = LuckyRace.getInstance();
     private static final HandlerList handlers = new HandlerList();
+    //TODO GETTER AND SETTER BUT THEY MIGHT BE USED
     private final LuckyGame luckyGame;
 
     public LuckyPlayerLeaveGameEvent(LuckyPlayerInGame luckyPlayerInGame) throws GameNotFoundException {
@@ -19,6 +20,7 @@ public class LuckyPlayerLeaveGameEvent extends Event {
         this.luckyGame = pl.getLuckyGames().stream().filter(x -> x.getUuid().equals(luckyPlayerInGame.getGameUUID())).findFirst().get();
     }
 
+    //NOT DELETE
     public static HandlerList getHandlerList() {
         return handlers;
     }

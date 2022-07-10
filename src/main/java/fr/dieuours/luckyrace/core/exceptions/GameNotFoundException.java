@@ -10,11 +10,4 @@ public class GameNotFoundException extends GameException {
     public GameNotFoundException() {
         super("LuckyError | UUID of the game not found in pl.getLuckyGames()");
     }
-
-    /**
-     * @param message String
-     */
-    public GameNotFoundException(String message) {
-        super(message);
-    }
 }

@@ -1,10 +1,14 @@
 package fr.dieuours.luckyrace.core.game;
 
 import fr.dieuours.luckyrace.core.FinalLine;
+import fr.dieuours.luckyrace.core.events.LuckyGameStatusChangeEvent;
+import fr.dieuours.luckyrace.core.exceptions.GameException;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 public class LuckyGame extends LuckyNewGame {
 
+    //TODO GETTER AND SETTER BUT THEY MIGHT BE USED
     private Location waitingLobby, lobbyWhenGameEnd;
     private FinalLine finalLine;
     private Status status;
@@ -27,39 +31,32 @@ public class LuckyGame extends LuckyNewGame {
         this.status = status;
     }
 
-    public Location getLobbyWhenGameEnd() {
-        return lobbyWhenGameEnd;
-    }
-
-    public void setLobbyWhenGameEnd(Location lobbyWhenGameEnd) {
-        this.lobbyWhenGameEnd = lobbyWhenGameEnd;
-    }
-
     public Location getWaitingLobby() {
         return waitingLobby;
-    }
-
-    public void setWaitingLobby(Location waitingLobby) {
-        this.waitingLobby = waitingLobby;
-    }
-
-    public FinalLine getFinalLine() {
-        return finalLine;
-    }
-
-    public void setFinalLine(FinalLine finalLine) {
-        this.finalLine = finalLine;
     }
 
     public Status getStatus() {
         return status;
     }
 
+    /**
+     * NEED BUKKIT
+     *
+     * @param status Status
+     * @throws GameException if (this.getStatus() == status)
+     * @see Bukkit
+     * @see LuckyGameStatusChangeEvent
+     */
+    public void setStatus(Status status) throws GameException {
+        Bukkit.getServer().getPluginManager().callEvent(new LuckyGameStatusChangeEvent(this, status));
+        this.status = status;
+    }
+
     public enum Status {
         WAITING,
         LOBBY,
         IN_GAME,
-        RESET,
-        ERROR,
+        /*RESET,
+        ERROR,*/
     }
 }

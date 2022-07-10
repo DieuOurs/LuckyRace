@@ -10,11 +10,4 @@ public class GameFullException extends GameException {
     public GameFullException() {
         super("LuckyError | This game is full");
     }
-
-    /**
-     * @param message String
-     */
-    public GameFullException(String message) {
-        super(message);
-    }
 }

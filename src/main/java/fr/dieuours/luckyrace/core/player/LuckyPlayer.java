@@ -5,6 +5,7 @@ import java.util.UUID;
 public class LuckyPlayer {
 
     private final UUID uuid;
+    //TODO GETTER AND SETTER BUT THEY MIGHT BE USED
     private int totalDeaths, totalWins;
 
     /**
@@ -29,16 +30,8 @@ public class LuckyPlayer {
         return totalDeaths;
     }
 
-    public void setTotalDeaths(int totalDeaths) {
-        this.totalDeaths = totalDeaths;
-    }
-
     public int getTotalWins() {
         return totalWins;
-    }
-
-    public void setTotalWins(int totalWins) {
-        this.totalWins = totalWins;
     }
 
     public boolean isInGame() {

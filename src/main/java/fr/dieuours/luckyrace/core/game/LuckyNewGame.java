@@ -5,13 +5,16 @@ import fr.dieuours.luckyrace.core.player.LuckyPlayerInGame;
 import fr.dieuours.luckyrace.utils.ClassSerializer;
 import org.bukkit.Location;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @see ClassSerializer
+ */
 public class LuckyNewGame extends ClassSerializer {
 
     private final UUID uuid;
+    //TODO GETTER AND SETTER BUT THEY MIGHT BE USED
     private int maxPlayers, minPlayers;
     private List<Location> playersSpawn;
     private List<LuckyChest> luckyChests;
@@ -36,15 +39,16 @@ public class LuckyNewGame extends ClassSerializer {
 
     /**
      * Default constructor
+     * <p>
+     * public LuckyNewGame() {
+     * this.uuid = UUID.randomUUID();
+     * this.maxPlayers = 2;
+     * this.minPlayers = 2;
+     * this.playersSpawn = new ArrayList<>();
+     * this.luckyChests = new ArrayList<>();
+     * this.luckyPlayerInGames = new ArrayList<>();
+     * }
      */
-    public LuckyNewGame() {
-        this.uuid = UUID.randomUUID();
-        this.maxPlayers = 2;
-        this.minPlayers = 2;
-        this.playersSpawn = new ArrayList<>();
-        this.luckyChests = new ArrayList<>();
-        this.luckyPlayerInGames = new ArrayList<>();
-    }
 
     public UUID getUuid() {
         return uuid;
@@ -54,40 +58,20 @@ public class LuckyNewGame extends ClassSerializer {
         return maxPlayers;
     }
 
-    public void setMaxPlayers(int maxPlayers) {
-        this.maxPlayers = maxPlayers;
-    }
-
     public int getMinPlayers() {
         return minPlayers;
-    }
-
-    public void setMinPlayers(int minPlayers) {
-        this.minPlayers = minPlayers;
     }
 
     public List<Location> getPlayersSpawn() {
         return playersSpawn;
     }
 
-    public void setPlayersSpawn(List<Location> playersSpawn) {
-        this.playersSpawn = playersSpawn;
-    }
-
     public List<LuckyChest> getLuckyChests() {
         return luckyChests;
     }
 
-    public void setLuckyChests(List<LuckyChest> luckyChests) {
-        this.luckyChests = luckyChests;
-    }
-
     public List<LuckyPlayerInGame> getLuckyPlayerInGames() {
         return luckyPlayerInGames;
-    }
-
-    public void setLuckyPlayerInGames(List<LuckyPlayerInGame> luckyPlayerInGames) {
-        this.luckyPlayerInGames = luckyPlayerInGames;
     }
 
     /**

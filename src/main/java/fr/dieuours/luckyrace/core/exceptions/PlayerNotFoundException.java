@@ -10,11 +10,4 @@ public class PlayerNotFoundException extends PlayerException {
     public PlayerNotFoundException() {
         super("LuckyError | UUID of the player not found in pl.getLuckyPlayers()");
     }
-
-    /**
-     * @param message String
-     */
-    public PlayerNotFoundException(String message) {
-        super(message);
-    }
 }

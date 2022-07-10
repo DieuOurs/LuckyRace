@@ -12,17 +12,20 @@ public class LuckyPlayerInGame extends LuckyPlayer {
 
     private final static LuckyRace pl = LuckyRace.getInstance();
     private final UUID gameUUID;
+    //TODO GETTER AND SETTER BUT THEY MIGHT BE USED
     private int totalDeathInGame;
 
+
     /**
-     * @param uuid             UUID
-     * @param totalDeaths      int
-     * @param totalWins        int
+     * @param luckyPlayer      LuckyPlayer
      * @param gameUUID         UUID
      * @param totalDeathInGame int
+     * @throws GameNotFoundException if not x -> x.getUuid().equals(gameUUID))
+     * @see LuckyPlayer
+     * @see GameNotFoundException
      */
-    public LuckyPlayerInGame(UUID uuid, int totalDeaths, int totalWins, UUID gameUUID, int totalDeathInGame) throws GameNotFoundException {
-        super(uuid, totalDeaths, totalWins);
+    public LuckyPlayerInGame(LuckyPlayer luckyPlayer, UUID gameUUID, int totalDeathInGame) throws GameNotFoundException {
+        super(luckyPlayer.getUuid(), luckyPlayer.getTotalDeaths(), luckyPlayer.getTotalWins());
         if (pl.getLuckyGames().stream().noneMatch(x -> x.getUuid().equals(gameUUID))) {
             throw new GameNotFoundException();
         }
@@ -32,13 +35,5 @@ public class LuckyPlayerInGame extends LuckyPlayer {
 
     public UUID getGameUUID() {
         return gameUUID;
-    }
-
-    public int getTotalDeathInGame() {
-        return totalDeathInGame;
-    }
-
-    public void setTotalDeathInGame(int totalDeathInGame) {
-        this.totalDeathInGame = totalDeathInGame;
     }
 }

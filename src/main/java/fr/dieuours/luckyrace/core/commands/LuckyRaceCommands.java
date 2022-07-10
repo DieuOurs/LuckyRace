@@ -34,7 +34,7 @@ public class LuckyRaceCommands implements CommandExecutor {
     }
 
     //TODO complete the list
-    /**
+    /*
      * create
      * delete
      * setSpawn

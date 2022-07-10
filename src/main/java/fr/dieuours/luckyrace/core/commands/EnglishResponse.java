@@ -14,7 +14,4 @@ public class EnglishResponse {
         return "Not enough arguments...";
     }
 
-    public static String getTooManyArgs() {
-        return "Too many arguments...";
-    }
 }
