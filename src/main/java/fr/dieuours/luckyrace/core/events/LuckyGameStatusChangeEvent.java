@@ -8,13 +8,11 @@ import org.bukkit.event.HandlerList;
 public class LuckyGameStatusChangeEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
-    //TODO GETTER AND SETTER BUT THEY MIGHT BE USED
-    private final LuckyGame.Status previousStatus, status;
+    private final LuckyGame.Status status;
     private final LuckyGame luckyGame;
 
     public LuckyGameStatusChangeEvent(LuckyGame luckyGame, LuckyGame.Status status) throws GameException {
         if (luckyGame.getStatus() == status) throw new GameException("Previous status is the same has new status");
-        this.previousStatus = luckyGame.getStatus();
         this.status = status;
         this.luckyGame = luckyGame;
     }
