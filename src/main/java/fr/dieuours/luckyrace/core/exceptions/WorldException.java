@@ -1,6 +1,6 @@
 package fr.dieuours.luckyrace.core.exceptions;
 
-public class WorldException extends Exception {
+public class WorldException extends GameConfigException {
 
     /**
      * Default constructor
