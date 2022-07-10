@@ -21,18 +21,18 @@ public class LuckyPlayerGameListener implements Listener {
         Player p = Bukkit.getPlayer(e.getLuckyPlayer().getUuid());
         p.sendMessage("You join the game!");
         p.teleport(e.getLuckyGame().getWaitingLobby());
-        e.getLuckyGame().getLuckyPlayerInGames().forEach(x ->
-                Bukkit.getPlayer(x.getUuid()).sendMessage(p.getName() + " has join the game!")
-        );
+        e.getLuckyGame().sendMessageToEveryPlayerInGame(p.getName() + " has join the game!");
     }
 
     /**
      * @param e LuckyPlayerLeaveGameEvent
      * @see LuckyPlayerLeaveGameEvent
      */
-    //TODO FILL
     @EventHandler
     public void onLuckyPlayerLeaveGameEvent(LuckyPlayerLeaveGameEvent e) {
-
+        Player p = Bukkit.getPlayer(e.getLuckyPlayerInGame().getUuid());
+        p.sendMessage("You left the game!");
+        p.teleport(e.getLuckyGame().getLobbyWhenGameEnd());
+        e.getLuckyGame().sendMessageToEveryPlayerInGame(p.getName() + " has leave the game!");
     }
 }
